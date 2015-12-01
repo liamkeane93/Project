@@ -68,7 +68,7 @@ public class MyActivity extends Activity {
                 Intent intent = new Intent(MyActivity.this, FindGround.class);
 
                 startActivity(intent);
-                
+
 
             }
 
