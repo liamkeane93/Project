@@ -12,7 +12,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             </activity>
-        <activity android:name=".Results"
+        <activity android:name="Results"
+                  android:label="Club GAA">
+        </activity>
+        <activity android:name="TeamLayout"
+                  android:label="Club GAA">
+        </activity>
+        <activity android:name=".FindGround"
                   android:label="Club GAA">
         </activity>
     </application>

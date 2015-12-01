@@ -3,20 +3,37 @@ package com.example.Club_Gaa;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 
 public class TeamLayout extends MyActivity {
 
-    Button current_results;
+    Button team1;
     SQLiteDatabase db;
     TextView txtMsg;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teams);
+
+        //final Context context = this;
+        team1 = (Button) findViewById(R.id.team1);
+        team1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //openDatabase();
+                // dropTable(); // if needed drop table tblAmigos
+            }
+
+        });
     }
+
+   //
+    // -----------------------------------------------------------------------------------------------
 
     private void openDatabase() {
         try {
@@ -38,4 +55,20 @@ public class TeamLayout extends MyActivity {
             finish();
         }
     }// createDatabase
+    private void dropTable()
+    {
+        // (clean start) action query to drop table
+        try
+        {
+            db.execSQL("DROP TABLE IF EXISTS tblAmigo;");
+            txtMsg.append("\n-dropTable - dropped!!");
+        }
+
+        catch (Exception e)
+        {
+            txtMsg.append("\nError dropTable: " + e.getMessage());
+            finish();
+        }
+    }
+
 }
