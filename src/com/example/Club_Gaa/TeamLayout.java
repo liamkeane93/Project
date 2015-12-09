@@ -115,7 +115,7 @@ public class TeamLayout extends MyActivity {
 
                 Toast.makeText(getApplicationContext(), players.get(pos), Toast.LENGTH_SHORT).show();
 
-                
+
             }
         });
     }
