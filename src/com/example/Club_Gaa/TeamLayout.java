@@ -1,18 +1,23 @@
 package com.example.Club_Gaa;
 
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
+import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.view.View.OnClickListener;
+import android.widget.*;
+import android.widget.AdapterView.OnItemClickListener;
 
+import java.util.ArrayList;
 
 public class TeamLayout extends MyActivity {
 
-    Button team1;
-    SQLiteDatabase db;
-    TextView txtMsg;
+    ListView lv;
+    EditText nameTxt, posTxt;
+    Button savebtn, retrieveBtn, team1;
+    ArrayList<String> players = new ArrayList<String>();
+
+    ArrayAdapter<String> adapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,50 +30,92 @@ public class TeamLayout extends MyActivity {
 
             @Override
             public void onClick(View v) {
-                //openDatabase();
-                // dropTable(); // if needed drop table tblAmigos
+
+                data();
             }
 
         });
     }
 
-   //
-    // -----------------------------------------------------------------------------------------------
+    private void data() {
 
-    private void openDatabase() {
-        try {
-            // path to private memory:
-            String SDcardPath = "data/data/cis470.matos.databases";
-            // -----------------------------------------------------------
-            // this provides the path name to the SD card
-            // String SDcardPath = Environment.getExternalStorageDirectory().getPath();
 
-            String myDbPath = SDcardPath + "/" + "myfriendsDB2.db";
-            txtMsg.append("\n-openDatabase - DB Path: " + myDbPath);
+        setContentView(R.layout.name_position);
+        nameTxt = (EditText) findViewById(R.id.nameTxt);
+        posTxt = (EditText) findViewById(R.id.posTxt);
 
-            db = SQLiteDatabase.openDatabase(myDbPath, null,
-                    SQLiteDatabase.CREATE_IF_NECESSARY);
+        savebtn = (Button) findViewById(R.id.saveBtn);
+        retrieveBtn = (Button) findViewById(R.id.retrievebtn);
 
-            txtMsg.append("\n-openDatabase - DB was opened");
-        } catch (SQLiteException e) {
-            txtMsg.append("\nError openDatabase: " + e.getMessage());
-            finish();
-        }
-    }// createDatabase
-    private void dropTable()
-    {
-        // (clean start) action query to drop table
-        try
-        {
-            db.execSQL("DROP TABLE IF EXISTS tblAmigo;");
-            txtMsg.append("\n-dropTable - dropped!!");
-        }
+        lv = (ListView) findViewById(R.id.listView1);
+        lv.setBackgroundColor(Color.LTGRAY);
 
-        catch (Exception e)
-        {
-            txtMsg.append("\nError dropTable: " + e.getMessage());
-            finish();
-        }
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_selectable_list_item, players);
+
+        final Database db = new Database(this);
+
+        //EVENTS
+        savebtn.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+
+                //OPEN
+                db.openDB();
+
+                //INSERT
+                long result = db.add(nameTxt.getText().toString(), posTxt.getText().toString());
+
+                if (result > 0) {
+                    nameTxt.setText("");
+                    posTxt.setText("");
+                } else {
+                    Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_SHORT).show();
+                }
+
+
+                //CLOSE DB
+                db.close();
+            }
+        });
+
+        //RETRIEVE
+        retrieveBtn.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                players.clear();
+
+                //OPEN
+                db.openDB();
+
+                //RETRIEVE
+                Cursor c = db.getAllNames();
+
+                while (c.moveToNext()) {
+                    String name = c.getString(1);
+                    players.add(name);
+                }
+
+                lv.setAdapter(adapter);
+
+                db.close();
+
+            }
+        });
+
+        lv.setOnItemClickListener(new OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int pos,
+                                    long id) {
+                // TODO Auto-generated method stub
+
+                Toast.makeText(getApplicationContext(), players.get(pos), Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
-
 }
