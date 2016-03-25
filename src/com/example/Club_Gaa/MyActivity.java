@@ -56,6 +56,7 @@ public class MyActivity extends Activity {
                 Intent intent = new Intent(MyActivity.this, TeamHome.class);
 
                 startActivity(intent);
+               // startActivity(intent);
 
             }
 

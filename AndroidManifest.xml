@@ -33,5 +33,8 @@
         <activity android:name=".TeamHome"
                   android:label="Club GAA">
         </activity>
+        <activity android:name=".Clubteams"
+                  android:label="Club GAA">
+        </activity>
     </application>
 </manifest>
