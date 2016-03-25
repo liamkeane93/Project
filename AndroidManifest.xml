@@ -3,7 +3,12 @@
           package="com.example.Club_Gaa"
           android:versionCode="1"
           android:versionName="1.0">
+
     <uses-sdk android:minSdkVersion="21"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application android:label="Club GAA" android:icon="@drawable/gaa">
         <activity android:name="MyActivity"
                   android:label="Club GAA">
@@ -19,6 +24,13 @@
                   android:label="Club GAA">
         </activity>
         <activity android:name=".FindGround"
+                  android:label="Club GAA">
+        </activity>
+
+        <activity android:name=".Entry"
+                  android:label="Club GAA">
+        </activity>
+        <activity android:name=".TeamHome"
                   android:label="Club GAA">
         </activity>
     </application>

@@ -53,7 +53,7 @@ public class MyActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MyActivity.this, TeamLayout.class);
+                Intent intent = new Intent(MyActivity.this, TeamHome.class);
 
                 startActivity(intent);
 
