@@ -36,5 +36,8 @@
         <activity android:name=".Clubteams"
                   android:label="Club GAA">
         </activity>
+        <activity android:name=".IntermediateTeams"
+                  android:label="Club GAA">
+        </activity>
     </application>
 </manifest>
