@@ -74,6 +74,18 @@ public class MyActivity extends Activity {
             }
 
         });
+
+        fixtures_button = (Button) findViewById(R.id.fixtures_button);
+
+        fixtures_button.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(MyActivity.this, WebActivity.class);
+                startActivity(intent);
+            }
+
+        });
     }
 }
 

@@ -47,7 +47,7 @@ public class Entry extends MyActivity {
                     e.printStackTrace();
                 }
 
-                new httpAsyncTask().execute("http://192.168.1.9:8080/SurveyServlet", post_dict.toString());
+                new httpAsyncTask().execute("http://192.168.1.11:8080/SurveyServlet", post_dict.toString());
 
                 //editText.setText(new httpAsyncTask().getDatabaseInfo());
             }
@@ -62,7 +62,7 @@ public class Entry extends MyActivity {
                 JSONObject post_dict = new JSONObject();
 
 
-               new httpAsyncTask().execute("http://192.168.1.9:8080/SurveyServlet", post_dict.toString());
+               new httpAsyncTask().execute("http://192.168.1.11:8080/SurveyServlet", post_dict.toString());
 
                 editText.setText(new httpAsyncTask().getDatabaseInfo());
 

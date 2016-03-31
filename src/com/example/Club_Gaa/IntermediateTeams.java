@@ -13,7 +13,7 @@ import org.json.JSONObject;
  */
 public class IntermediateTeams extends Clubteams implements AdapterView.OnItemSelectedListener {
 
-    private String[] state = { "Galway", "Mayo"};
+    private String[] state = { "Oranmore/Maree", "Clarenbridge"};
 
     Spinner spinnerOsversions;
     TextView selVersion;
@@ -43,7 +43,7 @@ public class IntermediateTeams extends Clubteams implements AdapterView.OnItemSe
         JSONObject post_dict = new JSONObject();
 
 
-        new httpAsyncTask().execute("http://192.168.1.9:8080/SurveyServlet", post_dict.toString());
+        new httpAsyncTask().execute("http://192.168.1.11:8080/SurveyServlet", post_dict.toString());
 
         selVersion.setText(new httpAsyncTask().getDatabaseInfo());
 }
