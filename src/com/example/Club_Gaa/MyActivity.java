@@ -30,7 +30,7 @@ public class MyActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MyActivity.this, Entry.class);
+                Intent intent = new Intent(MyActivity.this, WebActivity2.class);
 
                 startActivity(intent);
 
@@ -82,6 +82,18 @@ public class MyActivity extends Activity {
             @Override
             public void onClick(View arg0) {
                 Intent intent = new Intent(MyActivity.this, WebActivity.class);
+                startActivity(intent);
+            }
+
+        });
+
+        admin_button = (Button) findViewById(R.id.admin_button);
+
+        admin_button.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(MyActivity.this, Entry.class);
                 startActivity(intent);
             }
 
