@@ -60,6 +60,15 @@
                 android:text="Find a GAA ground"
                 android:layout_weight="0.08"/>
         <Button
+                android:id="@+id/score_board"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/linearlayout_bg"
+                android:padding="10dp"
+                android:layout_margin="4dp"
+                android:text="Keep Score"
+                android:layout_weight="0.08"/>
+        <Button
                 android:id="@+id/admin_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -68,6 +77,7 @@
                 android:layout_margin="4dp"
                 android:text="Admin Login"
                 android:layout_weight="0.08"/>
+
     </LinearLayout>
 
 </RelativeLayout>
