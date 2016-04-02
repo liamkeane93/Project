@@ -13,6 +13,7 @@ public class MyActivity extends Activity {
     Button results_button;
     Button find_button;
     Button admin_button;
+    Button score_board;
 
 
     /**
@@ -94,6 +95,17 @@ public class MyActivity extends Activity {
             @Override
             public void onClick(View arg0) {
                 Intent intent = new Intent(MyActivity.this, Entry.class);
+                startActivity(intent);
+            }
+
+        });
+        score_board = (Button) findViewById(R.id.score_board);
+
+        score_board.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(MyActivity.this, ScoreBoard.class);
                 startActivity(intent);
             }
 
