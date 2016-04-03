@@ -39,6 +39,9 @@
         <activity android:name=".IntermediateTeams"
                   android:label="Club GAA">
         </activity>
+        <activity android:name=".ScoreBoard"
+                  android:label="Club GAA">
+        </activity>
         <activity android:name=".WebActivity"
                              android:label="Club GAA">
     </activity>
