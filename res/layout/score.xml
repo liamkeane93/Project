@@ -8,7 +8,35 @@
               android:padding="10dp"
               android:orientation="vertical">
 
-    <LinearLayout
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reset"
+                android:background="#fd0095ff"
+                android:id="@+id/resetButton" android:layout_gravity="right"/>
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pause"
+                android:background="#fd0095ff"
+                android:id="@+id/pauseButton" android:layout_gravity="center_horizontal" android:layout_marginTop="-50dp"/>
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start"
+                android:background="#fd0095ff"
+                android:id="@+id/startButton" android:layout_marginTop="-50dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textColor="#ffffff"
+                android:text="00:00:00"
+                android:id="@+id/timerValue" android:layout_gravity="center_horizontal"/>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#999"
@@ -18,12 +46,12 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="452dp"
-                android:layout_marginRight="1dp"
+                android:layout_marginRight="0dp"
                 android:layout_weight="1"
                 android:background="#ff6d9399"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
-                android:padding="16dp" android:weightSum="1">
+                android:padding="16dp" android:weightSum="1" android:layout_marginBottom="0dp">
 
             <TextView
                     android:layout_width="wrap_content"
@@ -101,7 +129,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="0dp"
                         android:background="#ffd36161"
-                        android:onClick="resetButton"
+                        android:onClick="resetButton2"
                         android:paddingLeft="50dp"
                         android:paddingRight="50dp"
                         android:text="Reset"
@@ -117,7 +145,7 @@
                 android:background="#ff34996d"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="16dp" android:weightSum="1">
 
             <TextView
                     android:layout_width="wrap_content"
@@ -196,19 +224,19 @@
                 <Button
                         android:layout_width="151dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="0dp"
                         android:background="#ffd36161"
-                        android:onClick="resetButton2"
+                        android:onClick="resetButton"
                         android:paddingLeft="50dp"
                         android:paddingRight="50dp"
                         android:text="Reset"
-                        android:textSize="14sp" android:layout_marginTop="5dp"/>
+                        android:textSize="14sp" android:layout_weight="0.15" android:layout_marginTop="5dp"/>
 
 
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -216,6 +244,6 @@
             android:orientation="vertical">
 
 
-    </LinearLayout>
+        </LinearLayout>
 
 </LinearLayout>
