@@ -1,16 +1,16 @@
 package com.example.Club_Gaa;
 
 import android.database.Cursor;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.*;
-import android.widget.AdapterView.OnItemClickListener;
+        import android.graphics.Color;
+        import android.os.Bundle;
+        import android.view.View;
+        import android.view.View.OnClickListener;
+        import android.widget.*;
+        import android.widget.AdapterView.OnItemClickListener;
 
-import java.util.ArrayList;
+        import java.util.ArrayList;
 
-public class TeamLayout extends MyActivity {
+public class TeamLayout extends TeamHome {
 
     ListView lv;
     EditText nameTxt, posTxt;
@@ -52,7 +52,7 @@ public class TeamLayout extends MyActivity {
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_selectable_list_item, players);
 
-        final Database db = new Database(this);
+        final PersonalTeamDatabase db = new PersonalTeamDatabase(this);
 
         //EVENTS
         savebtn.setOnClickListener(new OnClickListener() {

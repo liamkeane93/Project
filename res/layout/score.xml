@@ -75,7 +75,7 @@
                     android:id="@+id/team_a_one_score"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="10dp"
                     android:background="#fd0095ff"
                     android:onClick="teamAPoint"
                     android:text="Point"
@@ -87,7 +87,7 @@
                     android:id="@+id/team_a_three_score"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:background="#fd0095ff"
                     android:onClick="teamAGoal"
                     android:paddingLeft="20dp"
@@ -96,6 +96,16 @@
                     android:textAllCaps="true"
                     android:textColor="#fff"
                     android:textSize="14sp" android:layout_weight="0.06"/>
+                <Button
+                        android:layout_width="151dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:background="#ffd36161"
+                        android:onClick="resetButton"
+                        android:paddingLeft="50dp"
+                        android:paddingRight="50dp"
+                        android:text="Reset"
+                        android:textSize="14sp" android:layout_marginTop="5dp"/>
 
 
         </LinearLayout>
@@ -159,7 +169,7 @@
                     android:id="@+id/team_b_one_score"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="10dp"
                     android:background="#fd0095ff"
                     android:onClick="teamBPoint"
                     android:text="POINT"
@@ -173,7 +183,7 @@
                     android:id="@+id/team_b_three_score"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:background="#fd0095ff"
                     android:onClick="teamBGoal"
                     android:paddingLeft="20dp"
@@ -182,6 +192,18 @@
                     android:textAllCaps="true"
                     android:textColor="#fff"
                     android:textSize="14sp" />
+
+                <Button
+                        android:layout_width="151dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="0dp"
+                        android:background="#ffd36161"
+                        android:onClick="resetButton2"
+                        android:paddingLeft="50dp"
+                        android:paddingRight="50dp"
+                        android:text="Reset"
+                        android:textSize="14sp" android:layout_marginTop="5dp"/>
+
 
         </LinearLayout>
     </LinearLayout>
@@ -192,17 +214,6 @@
             android:gravity="center"
             android:layout_gravity="center"
             android:orientation="vertical">
-
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="#ffd36161"
-                android:onClick="resetButton"
-                android:paddingLeft="50dp"
-                android:paddingRight="50dp"
-                android:text="Reset"
-                android:textSize="14sp" />
 
 
     </LinearLayout>

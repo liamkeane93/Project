@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.Toast;
 
-public class Database {
+public class PersonalTeamDatabase{
 
 	//COLUMNS
 	static final String ROWID="id";
@@ -28,7 +28,7 @@ public class Database {
     SQLiteDatabase db;
     DBHelper helper;
     
-    public Database(Context ctx) {
+    public PersonalTeamDatabase(Context ctx) {
 		// TODO Auto-generated constructor stub
     	
     	this.c=ctx;
@@ -70,7 +70,7 @@ public class Database {
     }
     
  // OPEN THE DB
-    public Database openDB()
+    public PersonalTeamDatabase openDB()
     {
     	try
     	{

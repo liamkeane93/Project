@@ -65,11 +65,23 @@ public class ScoreBoard extends MyActivity {
 
         TeamAPoint = 0;
         TeamAGoal =0;
+      //  TeamBPoint = 0;
+      //  TeamBGoal =0;
+       // displayGoalTeamB(0);
+        displayGoalTeamA(0);
+        displayForTeamA(0);
+      //  displayForTeamB(0);
+
+    }
+    public void resetButton2(View view) {
+
+       // TeamAPoint = 0;
+       // TeamAGoal =0;
         TeamBPoint = 0;
         TeamBGoal =0;
         displayGoalTeamB(0);
-        displayGoalTeamA(0);
-        displayForTeamA(0);
+        //displayGoalTeamA(0);
+     //   displayForTeamA(0);
         displayForTeamB(0);
 
     }
