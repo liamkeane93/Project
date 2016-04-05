@@ -21,8 +21,6 @@ public class WebActivity extends MyActivity{
 
         webView.loadUrl("http://galwaygaa.ie/gaafixtures/fixturelist.php?countyBoardID=12&daysAfter=14&fixturesOnly=y&compStyle=hurling");
 
-
-
     }
 
 }
