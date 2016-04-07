@@ -12,7 +12,6 @@ import android.widget.Button;
 public class FindGround extends MyActivity {
 
     Button kenny_park;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

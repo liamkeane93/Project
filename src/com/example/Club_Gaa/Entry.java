@@ -47,7 +47,7 @@ public class Entry extends MyActivity {
                     e.printStackTrace();
                 }
 
-                new httpAsyncTask().execute("http://192.168.1.11:8080/SurveyServlet", post_dict.toString());
+                new httpAsyncTask().execute("http://10.12.2.216:8080/SurveyServlet", post_dict.toString());
 
                 //editText.setText(new httpAsyncTask().getDatabaseInfo());
             }
@@ -58,11 +58,10 @@ public class Entry extends MyActivity {
             @Override
             public void onClick(View v) {
 
-                // System.out.print("Button");
-                JSONObject post_dict = new JSONObject();
+                //System.out.print("Button");
+                JSONObject post_dic = new JSONObject();
 
-
-               new httpAsyncTask().execute("http://192.168.1.11:8080/SurveyServlet", post_dict.toString());
+                new httpAsyncTask().execute("http://10.12.2.216:8080/SurveyServlet", post_dic.toString());
 
                 editText.setText(new httpAsyncTask().getDatabaseInfo());
 

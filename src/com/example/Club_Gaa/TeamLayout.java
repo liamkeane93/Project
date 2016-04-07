@@ -1,20 +1,20 @@
 package com.example.Club_Gaa;
 
 import android.database.Cursor;
-        import android.graphics.Color;
-        import android.os.Bundle;
-        import android.view.View;
-        import android.view.View.OnClickListener;
-        import android.widget.*;
-        import android.widget.AdapterView.OnItemClickListener;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.*;
+import android.widget.AdapterView.OnItemClickListener;
 
-        import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class TeamLayout extends TeamHome {
 
     ListView lv;
     EditText nameTxt, posTxt;
-    Button savebtn, retrieveBtn, team1;
+    Button savebtn, retrieveBtn, team1, forgetButton, team2;
     ArrayList<String> players = new ArrayList<String>();
 
     ArrayAdapter<String> adapter;
@@ -35,6 +35,17 @@ public class TeamLayout extends TeamHome {
             }
 
         });
+        team2 = (Button) findViewById(R.id.team2);
+        team2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                data();
+            }
+
+        });
+
     }
 
     private void data() {
@@ -46,6 +57,8 @@ public class TeamLayout extends TeamHome {
 
         savebtn = (Button) findViewById(R.id.saveBtn);
         retrieveBtn = (Button) findViewById(R.id.retrievebtn);
+
+        forgetButton = (Button) findViewById(R.id.forgetButton);
 
         lv = (ListView) findViewById(R.id.listView1);
         lv.setBackgroundColor(Color.LTGRAY);
@@ -77,6 +90,17 @@ public class TeamLayout extends TeamHome {
 
                 //CLOSE DB
                 db.close();
+            }
+        });
+
+        forgetButton.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //droptable();
+              //  db.dropTable();
+
+
             }
         });
 

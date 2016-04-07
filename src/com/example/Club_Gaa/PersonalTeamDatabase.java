@@ -30,7 +30,7 @@ public class PersonalTeamDatabase{
     
     public PersonalTeamDatabase(Context ctx) {
 		// TODO Auto-generated constructor stub
-    	
+
     	this.c=ctx;
     	helper=new DBHelper(c);
 	}
@@ -49,12 +49,14 @@ public class PersonalTeamDatabase{
 
              try
              {
+                 db.execSQL("DROP TABLE IF EXISTS m_TB");
             	 db.execSQL(CREATE_TB);
              } catch (SQLException e) {
                  e.printStackTrace();
              }
 			
 		}
+
 
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -68,12 +70,14 @@ public class PersonalTeamDatabase{
 		}
     	
     }
+
     
  // OPEN THE DB
     public PersonalTeamDatabase openDB()
     {
     	try
     	{
+
     		db=helper.getWritableDatabase();
     		
     	}catch(SQLException e)
