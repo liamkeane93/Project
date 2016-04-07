@@ -1,40 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context=".MainActivity"
 
-                android:background="@drawable/crokepark"
-                android:padding="10dp"
-        >
+    <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fillViewport="true">
+
 
     <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+
+            tools:context=".MainActivity"
+
+            android:background="@drawable/crokepark"
+            android:padding="10dp"
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-
-            android:weightSum="1" android:layout_alignParentBottom="true"
-            android:layout_alignParentTop="true" android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
-            >
 
 
+            android:weightSum="1"
+            android:id="@+id/linearLayout" android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" android:layout_alignParentTop="true">
+
+
+        <TextView
+            android:layout_width="278dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Athenry Hurling Club"
+            android:id="@+id/textView3" android:layout_weight="0.04"
+            />
         <Button
-                android:id="@+id/kenny_park"
-                android:layout_width="match_parent"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Find The Pitch"
+                android:id="@+id/kenny_park" android:layout_marginTop="-20dp"/>
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:text="Club Website"
+                android:id="@+id/athenry_website" android:layout_gravity="right"
+                android:layout_marginTop="-50dp"/>
 
-                android:layout_margin="4dp"
-                android:text="Kenny Park Athenry"
-                android:layout_weight="0.08" android:elegantTextHeight="false"
-                android:background="@drawable/linearlayout_bg"
+        <TextView
+                android:layout_width="333dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Abbeyknockmoy Hurling Club"
+                android:id="@+id/textView4" android:layout_weight="0.04"
                 />
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Find The Pitch"
+                android:id="@+id/Abbeyknockmoy" android:layout_marginTop="-20dp"/>
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:text="Club Website"
+                android:id="@+id/AbbeyknockmoyWebsite" android:layout_gravity="right"
+                android:layout_marginTop="-50dp"/>
+
+
+
+        <TextView
+                android:layout_width="333dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Annaghdown Hurling Club"
+                android:id="@+id/textView5" android:layout_weight="0.04"
+                />
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Find The Pitch"
+                android:id="@+id/Annaghdown" android:layout_marginTop="-20dp"/>
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:text="Club Website"
+                android:id="@+id/AnnaghdownWebsite" android:layout_gravity="right"
+                android:layout_marginTop="-50dp"/>
+
+        <TextView
+                android:layout_width="333dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Ardrahan Hurling Club"
+                android:id="@+id/textView6" android:layout_weight="0.04"
+                />
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Find The Pitch"
+                android:id="@+id/Ardrahan" android:layout_marginTop="-20dp"/>
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:text="Club Website"
+                android:id="@+id/ArdrahanWebsite" android:layout_gravity="right"
+                android:layout_marginTop="-50dp"/>
+
+        <TextView
+                android:layout_width="333dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Ballygar Hurling Club"
+                android:id="@+id/textView7" android:layout_weight="0.04"
+                />
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Find The Pitch"
+                android:id="@+id/Ballygar" android:layout_marginTop="-20dp"/>
+        <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:text="Club Website"
+                android:id="@+id/BallygarWebsite" android:layout_gravity="right"
+                android:layout_marginTop="-50dp"/>
 
     </LinearLayout>
+</ScrollView>
 
-</RelativeLayout>
+
 

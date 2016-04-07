@@ -11,11 +11,12 @@ import android.widget.Button;
  */
 public class FindGround extends MyActivity {
 
-    Button kenny_park;
+    Button kenny_park,athenry_website, Abbeyknockmoy,AbbeyknockmoyWebsite,Annaghdown,AnnaghdownWebsite;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ground);
+
         kenny_park = (Button) findViewById(R.id.kenny_park);
         kenny_park.setOnClickListener(new View.OnClickListener() {
 
@@ -25,9 +26,91 @@ public class FindGround extends MyActivity {
                 double latitude = 53.296254;
                 double longitude = -8.751457;
                 String coordinates = String.format("geo:0,0?q=" + latitude + "," + longitude);
-                Intent intentMap = new Intent( Intent.ACTION_VIEW, Uri.parse(coordinates) );
-                startActivity( intentMap );
+                Intent intentMap = new Intent(Intent.ACTION_VIEW, Uri.parse(coordinates));
+                startActivity(intentMap);
 
+
+            }
+
+        });
+
+        athenry_website = (Button) findViewById(R.id.athenry_website );
+        athenry_website .setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("http://www.athenrygaa.ie/en/"));
+                startActivity(intent);
+
+            }
+
+        });
+
+        Abbeyknockmoy = (Button) findViewById(R.id.Abbeyknockmoy);
+        Abbeyknockmoy.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                double latitude = 53.436362;
+                double longitude = -8.748008;
+                String coordinates = String.format("geo:0,0?q=" + latitude + "," + longitude);
+                Intent intentMap = new Intent(Intent.ACTION_VIEW, Uri.parse(coordinates));
+                startActivity(intentMap);
+
+
+            }
+
+        });
+
+        AbbeyknockmoyWebsite = (Button) findViewById(R.id.AbbeyknockmoyWebsite );
+        AbbeyknockmoyWebsite.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("http://www.abbeyknockmoy.gaa.ie/"));
+                startActivity(intent);
+
+            }
+
+        });
+
+        Annaghdown = (Button) findViewById(R.id.Annaghdown);
+        Annaghdown.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                double latitude = 53.388483;
+                double longitude = -8.958946;
+                String coordinates = String.format("geo:0,0?q=" + latitude + "," + longitude);
+                Intent intentMap = new Intent(Intent.ACTION_VIEW, Uri.parse(coordinates));
+                startActivity(intentMap);
+
+
+            }
+
+        });
+
+        AnnaghdownWebsite = (Button) findViewById(R.id.AnnaghdownWebsite );
+        AnnaghdownWebsite.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("http://www.annaghdowngaa.ie/"));
+                startActivity(intent);
 
             }
 
