@@ -47,8 +47,8 @@ public class Entry extends MyActivity {
                     e.printStackTrace();
                 }
 
+                //new httpAsyncTask().execute("http://192.168.1.11:8080/SurveyServlet", post_dict.toString());
                 new httpAsyncTask().execute("http://10.12.2.216:8080/SurveyServlet", post_dict.toString());
-
                 //editText.setText(new httpAsyncTask().getDatabaseInfo());
             }
         });
@@ -60,10 +60,17 @@ public class Entry extends MyActivity {
 
                 //System.out.print("Button");
                 JSONObject post_dic = new JSONObject();
+                try{
+                    post_dic.put("Option" ,"viewGalway");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
-                new httpAsyncTask().execute("http://10.12.2.216:8080/SurveyServlet", post_dic.toString());
+                //new httpAsyncTask().execute("http://192.168.1.11:8080/SurveyServlet", post_dic.toString());
 
-                editText.setText(new httpAsyncTask().getDatabaseInfo());
+                new httpAsyncTask().execute("http://10.12.2.216:8080/SurveyServlet");
+
+                editText.setText(new httpAsyncTask().getDatabaseInfo1());
 
             }
         });
