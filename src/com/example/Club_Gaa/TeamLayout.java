@@ -97,10 +97,7 @@ public class TeamLayout extends TeamHome {
 
             @Override
             public void onClick(View v) {
-                //droptable();
-              //  db.dropTable();
-
-
+                db.dropDB();
             }
         });
 
