@@ -11,130 +11,127 @@ import android.widget.Toast;
 
 public class PersonalTeamDatabase{
 
-	//COLUMNS
-	static final String ROWID="id";
-	static final String NAME = "name";
+    //COLUMNS
+    static final String ROWID="id";
+    static final String NAME = "name";
     static final String POSITION = "position";
-    
+
     //DB PROPERTIES
     static final String DBNAME="m_DB";
     static final String TBNAME="m_TB";
-    static final int DBVERSION='1';
-    
+    static final int DBVERSION='2';
+
     static final String CREATE_TB="CREATE TABLE m_TB(id INTEGER PRIMARY KEY AUTOINCREMENT,"
             + "name TEXT NOT NULL,position TEXT NOT NULL);";
-    
+
     final Context c;
     SQLiteDatabase db;
     DBHelper helper;
-    
-    public PersonalTeamDatabase(Context ctx) {
-		// TODO Auto-generated constructor stub
 
-    	this.c=ctx;
-    	helper=new DBHelper(c);
-	}
+    public PersonalTeamDatabase(Context ctx) {
+        // TODO Auto-generated constructor stub
+
+        this.c=ctx;
+        helper=new DBHelper(c);
+    }
 
     // INNER HELPER DB CLASS
     private static class DBHelper extends SQLiteOpenHelper
     {
 
-		public DBHelper(Context context	) {
-			super(context, DBNAME, null, DBVERSION);
-			// TODO Auto-generated constructor stub
-		}
+        public DBHelper(Context context	) {
+            super(context, DBNAME, null, DBVERSION);
+            // TODO Auto-generated constructor stub
+        }
 
-		@Override
-		public void onCreate(SQLiteDatabase db) {
+        @Override
+        public void onCreate(SQLiteDatabase db) {
 
-             try
-             {
-                 db.execSQL("DROP TABLE IF EXISTS m_TB");
-            	 db.execSQL(CREATE_TB);
-             } catch (SQLException e) {
-                 e.printStackTrace();
-             }
-			
-		}
+            try
+            {
+                db.execSQL("Delete m_DB");
+                db.execSQL(CREATE_TB);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
 
 
-		@Override
-		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-			// TODO Auto-generated method stub
-			
-			Log.w("DBAdapetr","Upgrading DB");
-			
-			db.execSQL("DROP TABLE IF EXISTS m_TB");
-			
-			onCreate(db);
-		}
-    	
+        @Override
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+            // TODO Auto-generated method stub
+
+            Log.w("DBAdapetr","Upgrading DB");
+
+            db.execSQL("DROP TABLE IF EXISTS m_TB");
+
+            onCreate(db);
+        }
+
     }
 
-    
- // OPEN THE DB
+    public void dropDB(){
+
+        try
+        {
+            db.execSQL("Delete m_TB");
+            //db.execSQL(CREATE_TB);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    // OPEN THE DB
     public PersonalTeamDatabase openDB()
     {
-    	try
-    	{
-
-    		db=helper.getWritableDatabase();
-    		
-    	}catch(SQLException e)
+        try
         {
-           Toast.makeText(c, e.getMessage(), Toast.LENGTH_LONG).show();
-          }
-    	
-    	return this;
+
+            db=helper.getWritableDatabase();
+
+        }catch(SQLException e)
+        {
+            Toast.makeText(c, e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+
+        return this;
     }
-	
-    
-  //CLOSE THE DB
+
+
+    //CLOSE THE DB
     public void close()
     {
-    	helper.close();
+        helper.close();
     }
-    
-  //INSERT INTO TABLE
+
+    //INSERT INTO TABLE
     public long add(String name,String pos)
     {
-    	try
-    	{
-    		ContentValues cv=new ContentValues();
-    		cv.put(NAME, name);
-    		cv.put(POSITION, pos);
-    		
-    		return db.insert(TBNAME, ROWID, cv);
-    		
-    	}catch(SQLException e)
+        try
+        {
+            ContentValues cv=new ContentValues();
+            cv.put(NAME, name);
+            cv.put(POSITION, pos);
+
+            return db.insert(TBNAME, ROWID, cv);
+
+        }catch(SQLException e)
         {
             e.printStackTrace();
-          }
-    	
-    	return 0;
+        }
+
+        return 0;
     }
-    
-  //GET ALL VALUES
-    
+
+    //GET ALL VALUES
+
     public Cursor getAllNames()
     {
-    	String[] columns={ROWID,NAME,POSITION};
-    	
-    	return db.query(TBNAME, columns, null, null, null, null, null);
+        String[] columns={ROWID,NAME,POSITION};
+
+        return db.query(TBNAME, columns, null, null, null, null, null);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
