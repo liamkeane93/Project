@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class httpAsyncTask extends AsyncTask<String, Void, String>
 {
-    private static String databaseInfo;
+    private static String databaseInfo,databaseInfo1;
     @Override
     protected String doInBackground(String... params)
     {
@@ -43,6 +43,9 @@ public class httpAsyncTask extends AsyncTask<String, Void, String>
             databaseInfo = jsonResult.getString("teamInfo");
             System.out.print(databaseInfo);
 
+            databaseInfo1 = jsonResult.getString("galwayInfo");
+            System.out.print(databaseInfo1);
+
 
         }
 
@@ -57,5 +60,11 @@ public class httpAsyncTask extends AsyncTask<String, Void, String>
     {
 
         return databaseInfo;
+    }
+
+    protected static String getDatabaseInfo1()
+    {
+
+        return databaseInfo1;
     }
 }
