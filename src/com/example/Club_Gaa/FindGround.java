@@ -12,7 +12,7 @@ import android.widget.Button;
 public class FindGround extends MyActivity {
 
     Button kenny_park,athenry_website, Abbeyknockmoy,AbbeyknockmoyWebsite,Annaghdown,AnnaghdownWebsite,
-            Ardrahan,ArdrahanWebsite;
+            Ardrahan,ArdrahanWebsite, Ballygar,BallygarWebsite;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -144,6 +144,39 @@ public class FindGround extends MyActivity {
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
                 intent.setData(Uri.parse("http://www.ardrahangaa.ie/"));
+                startActivity(intent);
+
+            }
+
+        });
+
+        Ballygar = (Button) findViewById(R.id.Ardrahan);
+        Ballygar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                double latitude = 53.522256;
+                double longitude = -8.326898;
+                String coordinates = String.format("geo:0,0?q=" + latitude + "," + longitude);
+                Intent intentMap = new Intent(Intent.ACTION_VIEW, Uri.parse(coordinates));
+                startActivity(intentMap);
+
+
+            }
+
+        });
+
+        BallygarWebsite = (Button) findViewById(R.id.ArdrahanWebsite );
+        BallygarWebsite.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://www.facebook.com/Ballygar-Hurling-Club-388164637975016/"));
                 startActivity(intent);
 
             }
