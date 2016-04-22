@@ -24,7 +24,7 @@ public class Clubteams extends TeamHome {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(Clubteams.this, IntermediateTeams.class);
+                Intent intent = new Intent(Clubteams.this, TeamsButtonsView.class);
 
                 startActivity(intent);
 

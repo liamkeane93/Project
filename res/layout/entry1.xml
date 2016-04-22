@@ -19,6 +19,7 @@
 
     <EditText
             android:id="@+id/nameTxt"
+            android:hint="Eg: No1:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -28,6 +29,7 @@
 
     <EditText
             android:id="@+id/posTxt"
+            android:hint="Eg: Joe Blogs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/nameTxt"
@@ -44,8 +46,8 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/posTxt"
             android:layout_alignParentLeft="true"
-            android:text="Name"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:text="Number"
+            android:textAppearance="?android:attr/textAppearanceSmall" android:textColor="#ffffff"/>
 
     <TextView
             android:id="@+id/textView2"
@@ -53,8 +55,8 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/posTxt"
             android:layout_alignParentLeft="true"
-            android:text="Position"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:text="Name"
+            android:textAppearance="?android:attr/textAppearanceSmall" android:textColor="#ffffff"/>
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,8 +66,8 @@
             android:id="@+id/scrollView1"
             android:layout_width="fill_parent"
             android:layout_height="100dp"
-            android:layout_alignParentBottom="true" android:layout_alignParentStart="true"
-            android:layout_marginBottom="81dp">
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/saveBtn" android:layout_alignParentBottom="true">
 
 
         <EditText
