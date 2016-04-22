@@ -46,6 +46,14 @@
         <activity android:name=".WebActivity"
                              android:label="Club GAA">
     </activity>
+        <activity android:name=".TeamsButtonsView"
+                  android:label="Club GAA">
+        </activity>
+        <activity android:name=".ViewArea"
+                  android:label="Club GAA">
+        </activity>
+
+
         <activity android:name=".WebActivity2"
                   android:label="Club GAA">
         </activity>

@@ -42,29 +42,28 @@ public class httpAsyncTask extends AsyncTask<String, Void, String>
             jsonResult = new JSONObject(result);
             databaseInfo = jsonResult.getString("teamInfo");
             System.out.print(databaseInfo);
-
-            databaseInfo1 = jsonResult.getString("galwayInfo");
-            System.out.print(databaseInfo1);
-
-
         }
 
         catch (JSONException e)
         {
             e.printStackTrace();
         }
+        /*
 
-
+        try{
+            jsonResult = new JSONObject(result);
+            databaseInfo1 = jsonResult.getString("oranmoreTeam");
+            System.out.print(databaseInfo1);
+        }
+        catch (JSONException e)
+        {
+            e.printStackTrace();
+        }
+        */
     }
     protected static String getDatabaseInfo()
     {
 
         return databaseInfo;
-    }
-
-    protected static String getDatabaseInfo1()
-    {
-
-        return databaseInfo1;
     }
 }
