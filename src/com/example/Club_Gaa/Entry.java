@@ -28,7 +28,7 @@ public class Entry extends MyActivity {
         editText= (EditText)findViewById(R.id.editText);
         nameTxt = (EditText)findViewById(R.id.nameTxt);
         posTxt = (EditText)findViewById(R.id.posTxt);
-
+        nameTxt.setText("No: ");
         saveBtn = (Button)findViewById(R.id.saveBtn);
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
@@ -47,9 +47,9 @@ public class Entry extends MyActivity {
                     e.printStackTrace();
                 }
 
-                nameTxt.setText("");
+                nameTxt.setText("No: ");
 
-                posTxt.setText("");
+                posTxt.setText(" ");
 
                 //new httpAsyncTask().execute("http://192.168.1.11:8080/SurveyServlet", post_dict.toString());
                 new httpAsyncTask().execute("http://10.12.2.216:8090/SurveyServlet", post_dict.toString());
@@ -87,11 +87,10 @@ public class Entry extends MyActivity {
             public void onClick(View v) {
 
                 // System.out.print("Button");
-                JSONObject post_dict = new JSONObject();
+               // JSONObject post_dict = new JSONObject();
 
 
-                new httpAsyncTask().execute("http://10.12.2.216:8090/SurveyServlet", post_dict.toString());
-
+              //  new httpAsyncTask().execute("http://10.12.2.216:8090/SurveyServlet", post_dict.toString());
                 editText.setText(new httpAsyncTask().getDatabaseInfo());
 
             }

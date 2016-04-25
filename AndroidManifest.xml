@@ -21,7 +21,7 @@
                   android:label="Club GAA">
         </activity>
 
-        <activity android:name="TeamLayout"
+        <activity android:name=".TeamLayoutSqLite"
                   android:label="Club GAA">
         </activity>
         <activity android:name=".FindGround"

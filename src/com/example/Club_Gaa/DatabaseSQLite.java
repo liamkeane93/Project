@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.Toast;
 
-public class PersonalTeamDatabase{
+public class DatabaseSQLite {
 
     //COLUMNS
     static final String ROWID="id";
@@ -19,7 +19,7 @@ public class PersonalTeamDatabase{
     //DB PROPERTIES
     static final String DBNAME="m_DB";
     static final String TBNAME="m_TB";
-    static final int DBVERSION='2';
+    static final int DBVERSION='3';
 
     static final String CREATE_TB="CREATE TABLE m_TB(id INTEGER PRIMARY KEY AUTOINCREMENT,"
             + "name TEXT NOT NULL,position TEXT NOT NULL);";
@@ -28,7 +28,7 @@ public class PersonalTeamDatabase{
     SQLiteDatabase db;
     DBHelper helper;
 
-    public PersonalTeamDatabase(Context ctx) {
+    public DatabaseSQLite(Context ctx) {
         // TODO Auto-generated constructor stub
 
         this.c=ctx;
@@ -49,7 +49,6 @@ public class PersonalTeamDatabase{
 
             try
             {
-                db.execSQL("Delete m_DB");
                 db.execSQL(CREATE_TB);
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -57,39 +56,24 @@ public class PersonalTeamDatabase{
 
         }
 
-
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             // TODO Auto-generated method stub
 
             Log.w("DBAdapetr","Upgrading DB");
 
-            db.execSQL("DROP TABLE IF EXISTS m_TB");
+            db.execSQL("DROP TABLE IF EXISTS " + TBNAME);
 
             onCreate(db);
         }
 
     }
 
-    public void dropDB(){
-
-        try
-        {
-            db.execSQL("Delete m_TB");
-            //db.execSQL(CREATE_TB);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-
     // OPEN THE DB
-    public PersonalTeamDatabase openDB()
+    public DatabaseSQLite openDB()
     {
         try
         {
-
             db=helper.getWritableDatabase();
 
         }catch(SQLException e)
@@ -133,5 +117,15 @@ public class PersonalTeamDatabase{
         String[] columns={ROWID,NAME,POSITION};
 
         return db.query(TBNAME, columns, null, null, null, null, null);
+    }
+
+    public void dropTable() {
+
+        db.execSQL("DROP TABLE IF EXISTS " + TBNAME);
+    }
+
+    public void RecreateTable() {
+        db.execSQL(CREATE_TB);
+
     }
 }
