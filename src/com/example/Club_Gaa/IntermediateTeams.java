@@ -42,8 +42,7 @@ public class IntermediateTeams extends Clubteams implements AdapterView.OnItemSe
 
         JSONObject post_dict = new JSONObject();
 
-
-        new httpAsyncTask().execute("http://192.168.1.11:8080/SurveyServlet", post_dict.toString());
+        new httpAsyncTask().execute("http://10.12.2.216:8090/SurveyServlet", post_dict.toString());
 
         selVersion.setText(new httpAsyncTask().getDatabaseInfo());
 }
@@ -53,7 +52,6 @@ public class IntermediateTeams extends Clubteams implements AdapterView.OnItemSe
         // TODO Auto-generated method stub
 
     }
-
 
 }
 
