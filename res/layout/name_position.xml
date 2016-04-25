@@ -1,4 +1,3 @@
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
@@ -28,6 +27,7 @@
 
     <EditText
             android:id="@+id/posTxt"
+            android:hint="Eg: Joe Blogs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/nameTxt"
@@ -41,7 +41,10 @@
             android:id="@+id/retrievebtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Retrieve" android:layout_alignTop="@+id/button" android:layout_centerHorizontal="true"/>
+            android:layout_alignBaseline="@+id/saveBtn"
+            android:layout_alignBottom="@+id/saveBtn"
+            android:layout_alignRight="@+id/posTxt"
+            android:text="Retrieve" />
 
     <TextView
             android:id="@+id/textView1"
@@ -49,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/posTxt"
             android:layout_alignParentLeft="true"
-            android:text="Name"
+            android:text="Number"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
@@ -58,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/posTxt"
             android:layout_alignParentLeft="true"
-            android:text="Position"
+            android:text="Name"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <LinearLayout
@@ -73,18 +76,19 @@
                 android:id="@+id/listView1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/linearlayout_bg"
+
                 >
 
         </ListView>
 
     </LinearLayout>
     <Button
+            style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Forget"
-            android:id="@+id/forgetButton"
-            android:layout_above="@+id/linearLayout1" android:layout_alignParentEnd="true"/>
+            android:text="Drop"
+            android:id="@+id/ForgetButton"
+            android:layout_alignParentTop="true" android:layout_alignParentEnd="true"/>
 
 
 </RelativeLayout>

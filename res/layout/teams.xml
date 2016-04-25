@@ -28,17 +28,7 @@
                 android:layout_height="wrap_content"
 
                 android:layout_margin="4dp"
-                android:text="My Team 1"
-                android:layout_weight="0.08" android:elegantTextHeight="false"
-                android:background="@drawable/linearlayout_bg"
-                />
-        <Button
-                android:id="@+id/team2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:layout_margin="4dp"
-                android:text="My Team 2"
+                android:text="Team 1"
                 android:layout_weight="0.08" android:elegantTextHeight="false"
                 android:background="@drawable/linearlayout_bg"
                 />
@@ -46,4 +36,3 @@
     </LinearLayout>
 
 </RelativeLayout>
-

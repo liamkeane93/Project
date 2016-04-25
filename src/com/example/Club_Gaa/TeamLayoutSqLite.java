@@ -10,62 +10,33 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import java.util.ArrayList;
 
-public class TeamLayout extends TeamHome {
+public class TeamLayoutSqLite extends TeamHome {
 
     ListView lv;
-    EditText nameTxt, posTxt;
-    Button savebtn, retrieveBtn, team1, forgetButton, team2;
-    ArrayList<String> players = new ArrayList<String>();
+    EditText nameTxt,posTxt;
+    Button savebtn,retrieveBtn,ForgetButton;
+    ArrayList<String> players=new ArrayList<String>();
 
     ArrayAdapter<String> adapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.teams);
-
-        //final Context context = this;
-        team1 = (Button) findViewById(R.id.team1);
-        team1.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                data();
-            }
-
-        });
-        team2 = (Button) findViewById(R.id.team2);
-        team2.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                data();
-            }
-
-        });
-
-    }
-
-    private void data() {
-
-
         setContentView(R.layout.name_position);
-        nameTxt = (EditText) findViewById(R.id.nameTxt);
-        posTxt = (EditText) findViewById(R.id.posTxt);
 
-        savebtn = (Button) findViewById(R.id.saveBtn);
-        retrieveBtn = (Button) findViewById(R.id.retrievebtn);
+        nameTxt=(EditText) findViewById(R.id.nameTxt);
+        posTxt=(EditText) findViewById(R.id.posTxt);
 
-        forgetButton = (Button) findViewById(R.id.forgetButton);
-
-        lv = (ListView) findViewById(R.id.listView1);
+        savebtn=(Button) findViewById(R.id.saveBtn);
+        ForgetButton=(Button) findViewById(R.id.ForgetButton);
+        retrieveBtn=(Button) findViewById(R.id.retrievebtn);
+        nameTxt.setText("No: ");
+        lv=(ListView) findViewById(R.id.listView1);
         lv.setBackgroundColor(Color.LTGRAY);
 
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_selectable_list_item, players);
+        adapter=new ArrayAdapter<String>(this,android.R.layout.simple_selectable_list_item,players);
 
-        final PersonalTeamDatabase db = new PersonalTeamDatabase(this);
+        final DatabaseSQLite db=new DatabaseSQLite(this);
 
         //EVENTS
         savebtn.setOnClickListener(new OnClickListener() {
@@ -77,6 +48,7 @@ public class TeamLayout extends TeamHome {
                 //OPEN
                 db.openDB();
 
+
                 //INSERT
                 long result = db.add(nameTxt.getText().toString(), posTxt.getText().toString());
 
@@ -87,17 +59,21 @@ public class TeamLayout extends TeamHome {
                     Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_SHORT).show();
                 }
 
-
+                nameTxt.setText("No: ");
+                posTxt.setText("");
                 //CLOSE DB
                 db.close();
             }
         });
-
-        forgetButton.setOnClickListener(new OnClickListener() {
+        ForgetButton.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                db.dropDB();
+                db.openDB();
+                db.dropTable();
+                db.RecreateTable();
+                db.close();
+
             }
         });
 
@@ -113,11 +89,14 @@ public class TeamLayout extends TeamHome {
                 db.openDB();
 
                 //RETRIEVE
-                Cursor c = db.getAllNames();
+                Cursor c=db.getAllNames();
 
-                while (c.moveToNext()) {
-                    String name = c.getString(1);
-                    players.add(name);
+                while(c.moveToNext())
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.append(c.getString(1));
+                    sb.append(" " +c.getString(2));
+                    players.add(sb.toString());
                 }
 
                 lv.setAdapter(adapter);
@@ -136,8 +115,8 @@ public class TeamLayout extends TeamHome {
 
                 Toast.makeText(getApplicationContext(), players.get(pos), Toast.LENGTH_SHORT).show();
 
-
             }
         });
+
     }
 }
