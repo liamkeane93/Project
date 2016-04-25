@@ -29,34 +29,20 @@ public class TeamHome extends MyActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(TeamHome.this,Clubteams.class);
-
-                startActivity(intent);
-
-
-
-            }
-
-        });
-
-        CountyTeams = (Button) findViewById(R.id.CountyTeams);
-        CountyTeams.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TeamHome.this, Countyteams.class);
+                Intent intent = new Intent(TeamHome.this,ViewArea.class);
 
                 startActivity(intent);
 
             }
 
         });
+
         PersonalTeams = (Button) findViewById(R.id.PersonalTeams);
         PersonalTeams.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TeamHome.this, TeamLayout.class);
+                Intent intent = new Intent(TeamHome.this, TeamLayoutSqLite.class);
 
                 startActivity(intent);
             }
