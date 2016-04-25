@@ -75,7 +75,7 @@
                 android:background="@drawable/linearlayout_bg"
                 android:padding="10dp"
                 android:layout_margin="4dp"
-                android:text="Admin Login"
+                android:text="Set My Club Team"
                 android:layout_weight="0.08"/>
 
     </LinearLayout>
