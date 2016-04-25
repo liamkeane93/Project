@@ -18,6 +18,7 @@ public class WebActivity extends MyActivity{
         webView = (WebView) findViewById(R.id.webView);
 
         webView.getSettings().setJavaScriptEnabled(true);
+       // webView.getSettings().setUseWideViewPort(true);
 
         webView.loadUrl("http://galwaygaa.ie/gaafixtures/fixturelist.php?countyBoardID=12&daysAfter=14&fixturesOnly=y&compStyle=hurling");
 

@@ -11,51 +11,51 @@
 
     <application android:label="Club GAA" android:icon="@drawable/gaa">
         <activity android:name="MyActivity"
-                  android:label="Club GAA">
+                  android:label="Club Hurling">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             </activity>
         <activity android:name="Results"
-                  android:label="Club GAA">
+                  android:label="Club Hurling">
         </activity>
 
         <activity android:name=".TeamLayoutSqLite"
-                  android:label="Club GAA">
+                  android:label="Club Hurling">
         </activity>
         <activity android:name=".FindGround"
-                  android:label="Club GAA">
+                  android:label="Club Hurling">
         </activity>
 
         <activity android:name=".Entry"
-                  android:label="Club GAA">
+                  android:label="Club Hurling">
         </activity>
         <activity android:name=".TeamHome"
-                  android:label="Club GAA">
+                  android:label="Club Hurling">
         </activity>
         <activity android:name=".Clubteams"
-                  android:label="Club GAA">
+                  android:label="Club Hurling">
         </activity>
         <activity android:name=".IntermediateTeams"
-                  android:label="Club GAA">
+                  android:label="Club Hurling">
         </activity>
         <activity android:name=".ScoreBoard"
-                  android:label="Club GAA">
+                  android:label="Club Hurling">
         </activity>
         <activity android:name=".WebActivity"
-                             android:label="Club GAA">
+                             android:label="Club Hurling">
     </activity>
         <activity android:name=".TeamsButtonsView"
-                  android:label="Club GAA">
+                  android:label="Club Hurling">
         </activity>
         <activity android:name=".ViewArea"
-                  android:label="Club GAA">
+                  android:label="Club Hurling">
         </activity>
 
 
         <activity android:name=".WebActivity2"
-                  android:label="Club GAA">
+                  android:label="Club Hurling">
         </activity>
     </application>
 </manifest>

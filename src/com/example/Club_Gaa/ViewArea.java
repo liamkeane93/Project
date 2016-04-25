@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import org.json.JSONObject;
 
 /**
  * Created by Liam on 19/04/2016.
@@ -27,10 +26,10 @@ public class ViewArea extends TeamsButtonsView {
             @Override
            public void onClick(View v) {
 
-                JSONObject post_dict = new JSONObject();
+                //JSONObject post_dict = new JSONObject();
 
 
-                new httpAsyncTask().execute("http://10.12.2.216:8080/SurveyServlet", post_dict.toString());
+                //new httpAsyncTask().execute("http://10.12.2.216:8080/SurveyServlet", post_dict.toString());
 
                 editText.setText(new httpAsyncTask().getDatabaseInfo());
 
